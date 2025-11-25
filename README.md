@@ -1,5 +1,5 @@
 
-````markdown
+
 # Spark E-Commerce Lab
 
 Ce projet contient des exemples de partitionnement personnalisé avec PySpark pour un laboratoire e-commerce.
