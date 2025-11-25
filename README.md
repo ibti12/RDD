@@ -1,35 +1,48 @@
-# LAB4 - Spark E-commerce Log Analysis
 
-## Description
-Ce projet est un laboratoire d'analyse de logs web pour un site e-commerce en utilisant **Apache Spark**.  
-Il comprend la lecture, le parsing, le traitement, l'analyse statistique, et la visualisation des données de logs.
+````markdown
+# Spark E-Commerce Lab
 
-Le projet inclut également la résolution de plusieurs challenges analytiques typiques : taux de rebond, funnel de conversion, heures de pointe, détection des IPs suspectes et identification des endpoints lents.
+Ce projet contient des exemples de partitionnement personnalisé avec PySpark pour un laboratoire e-commerce.
 
----
+## Fonctionnalités
+- Utilisation de différents partitioners :
+  - Hash par défaut
+  - Range (par ID client)
+  - Modulo (répartition uniforme)
+  - Géographique (par pays)
+  - Custom Hash (MD5 pour clés string)
+- Analyse de la distribution des données par partition
+- Comparaison des performances des différents partitioners
+- Cas pratiques : priorité, géographie, time-series
 
-## Contenu du projet
+## Fichier principal
+- `lab2_custom_partitioner.py` : script Python complet avec toutes les démonstrations
 
-| Fichier | Description |
-|---------|-------------|
-| `lab4_log_analysis.py` | Script de base pour l'analyse des logs (parsing, statistiques simples). |
-| `lab4_challenges.py` | Scripts pour résoudre les challenges analytiques spécifiques. |
-| `lab4_full_analysis.py` | Script complet combinant parsing, statistiques et challenges. |
-| `lab4_full_analysis_visual.py` | Version complète avec **visualisations** (Matplotlib/Seaborn) pour le rapport. |
-| `lab4_caching_demo.py` | Démonstration de caching avec Spark pour améliorer les performances. |
-| `generate_logs.py` | Script pour générer des logs simulés pour tester les scripts. |
-| `spark-data/ecommerce/` | Contient les logs bruts et les fichiers traités (CSV et Parquet). |
-| `*.png` | Graphiques générés par `lab4_full_analysis_visual.py` : trafic horaire, funnel, endpoints lents. |
+## Usage
+1. Cloner le dépôt :
+```bash
+git clone https://github.com/ibti12/RDD.git
+````
 
----
-
-## Prérequis
-
-- Python 3.8+  
-- Apache Spark 3.x  
-- Bibliothèques Python : `pyspark`, `matplotlib`, `seaborn`, `pandas`
-
-Installation rapide des dépendances :
+2. Aller dans le dossier :
 
 ```bash
-pip install pyspark matplotlib seaborn pandas
+cd spark-ecommerce-lab
+```
+
+3. Exécuter le script :
+
+```bash
+python lab2_custom_partitioner.py
+```
+
+## Remarques
+
+* Nécessite PySpark installé (`pip install pyspark`)
+* Compatible Python 3.10+
+
+## Auteur
+
+* Ibti12
+
+```
